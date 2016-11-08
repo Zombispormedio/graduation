@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'completed/index'
+
   root 'welcome#index'
 
   post 'student/create' => 'student#create'
