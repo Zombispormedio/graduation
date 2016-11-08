@@ -1,5 +1,20 @@
 <% content_for :title, "¡Oído cocina! A la Graduation Party que te vas" %>
-<h1>¡Lo hemos entendido!</h1>
-<p>Estamos muy contentos de que vengas</p>
 
-<%= button_to 'Volver', root_path,  :method => "get" %>
+
+<div class="container">
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="https://www.mckendree.edu/offices/academic-records/grad-information/senior-invite.png">
+    </div>
+    <div class="card-content">
+      <h5 class="card-titlegrey-text text-darken-4">¡Lo hemos entendido!</h5>
+      <p>Estamos muy contentos de que vengas 😊</p>
+
+      <div class="center-align">
+        <%= button_to 'Volver', root_path,  :method => "get",class: "btn-large waves-effect waves-light purple" %>
+      </div>
+
+    </div>
+  </div>
+</div>
+

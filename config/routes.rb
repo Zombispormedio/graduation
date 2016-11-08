@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'completed/index'
+  get 'completed' =>'completed#index'
 
-  root 'welcome#index'
+  root 'student#index'
 
   post 'student/create' => 'student#create'
 

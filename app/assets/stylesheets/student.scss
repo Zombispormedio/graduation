@@ -1,3 +1,10 @@
 // Place all the styles related to the student controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.input-field {
+  input[type=text]:focus,  input[type=email]:focus {
+    border-bottom: 1px solid #9c27b0;
+    box-shadow: 0 1px 0 0 #9c27b0;
+  }
+}
+

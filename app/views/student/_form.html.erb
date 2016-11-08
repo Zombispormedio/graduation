@@ -1,20 +1,42 @@
-<%= form_for :student, url: student_create_path do |f| %>
-    <p>
-      <%= f.label :name, 'Nombre' %><br>
-      <%= f.text_field :name %>
-    </p>
+<div class="row">
+  <%= form_for :new_student, :html => {:class => "col s12"}, url: student_create_path do |f| %>
+      <div class="row">
+        <div class="input-field col s6">
+          <%= f.label :name, 'Nombre' %><br>
+          <%= f.text_field :name, :required => true%>
+        </div>
+        <div class="input-field col s6">
+          <%= f.label :surname, 'Apellido' %><br>
+          <%= f.text_field :surname, :required => true %>
+        </div>
+      </div>
 
-    <p>
-      <%= f.label :surname, 'Apellido' %><br>
-      <%= f.text_field :surname %>
-    </p>
+      <div class="row">
+        <div class="input-field col s12">
 
-    <p>
-      <%= f.label :email %><br>
-      <%= f.text_field :email %>
-    </p>
+          <p>
+            <%= f.label :email %><br>
+            <%= f.email_field :email,:required => true %>
+          </p>
+        </div>
+      </div>
 
-    <p>
-      <%= submit_tag 'No me lo pierdo' %>
-    </p>
-<% end %>
+        <div class="center-align">
+          <%= submit_tag 'No me lo pierdo', class: "btn-large waves-effect waves-light purple" %>
+        </div>
+
+      <% if @new_student.errors.any? %>
+          <div>
+            <h5>¡Uy! ¿Qué ha podido pasar?</h5>
+            <p><%= pluralize(@new_student.errors.count, "error") %></p>
+
+            <ul>
+              <% @new_student.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+      </div>
+  <% end %>
+</div>
