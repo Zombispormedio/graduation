@@ -22,11 +22,9 @@ class StudentController < ApplicationController
 
   private
   def append_to_sheet(name, email)
-    p ENV["GRADUATION_MAKER"]
     response = Unirest.post ENV["GRADUATION_MAKER"],
                             headers:{ "Accept" => "application/json" },
                             parameters:{ :value1=>name, :value2=>email }
-    p response
 
   end
 
