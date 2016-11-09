@@ -3,7 +3,7 @@
       <div class="row">
         <div class="input-field col s6">
           <%= f.label :name, 'Nombre' %><br>
-          <%= f.text_field :name, :required => true%>
+          <%= f.text_field :name, :required => true %>
         </div>
         <div class="input-field col s6">
           <%= f.label :surname, 'Apellido' %><br>
@@ -16,16 +16,20 @@
 
           <p>
             <%= f.label :email %><br>
-            <%= f.email_field :email,:required => true %>
+            <%= f.email_field :email, :required => true %>
           </p>
         </div>
       </div>
 
-        <div class="center-align">
+      <div class="row">
+        <div class="row center-align">
           <%= submit_tag 'No me lo pierdo', class: "btn-large waves-effect waves-light purple" %>
-
         </div>
 
+        <div class="row center-align">
+          <%= link_to "Si vienes, aceptas los términos y condiciones del uso de tus datos", terms_path, :target => "_blank" %>
+        </div>
+      </div>
 
 
       <% if @new_student.errors.any? %>
@@ -42,4 +46,4 @@
       <% end %>
       </div>
   <% end %>
-</div>
+  </div>

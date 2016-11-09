@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'terms' =>'terms#index'
+
   get 'completed' =>'completed#index'
 
   root 'student#index'
